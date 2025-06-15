@@ -37,6 +37,7 @@ jobs:
         git push origin HEAD:release --tags
 
     - name: Docker Meta
+      id: meta
       uses: docker/metadata-action@v5
       with:
         images: |
