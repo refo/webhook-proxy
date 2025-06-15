@@ -2,7 +2,8 @@ FROM golang:1.24-alpine AS builder
 
 WORKDIR /build
 
-COPY go.mod go.sum main.go config.yaml build ./
+RUN touch config.yaml
+COPY go.mod go.sum main.go ./
 RUN go mod download
 RUN go build --ldflags="-s -w" -o /build/main main.go
 
