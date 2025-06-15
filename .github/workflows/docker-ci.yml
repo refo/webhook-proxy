@@ -15,6 +15,9 @@ jobs:
       with:
         fetch-tags: true
     
+    - run: |
+      git fetch --unshallow --tags
+
     - name: Get the latest tag
       id: get_tag
       run: |
